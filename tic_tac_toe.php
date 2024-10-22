@@ -72,13 +72,13 @@ class TicTacToe {
             $reply2 = $this->checkColumns();
             $reply3 = $this->checkDiagonals();
             if($this->witness > 1){$reply = "Invalid game!!!. We found $this->witness lines (with 3 matching symbols) in total.";}
-            elseif(($reply1 == $reply2) && ($reply2 == $reply3) && ($reply1 == $compare)){$reply = "No winner, truce!!";}
+            elseif(($reply1 == $reply2) && ($reply2 == $reply3) && ($reply1 == $compare)){$reply = "No winner, tied!!";}
             elseif(!($reply1 == $compare)){$reply = $reply1;}
             elseif(!($reply2 == $compare)){$reply = $reply2;}
             else{$reply = $reply3;}
         }
-        else{$reply = "Game doesn't pass plays turn count";}
-        return $reply;    
+        else{$reply = "Invalid game!!!. It doesn't pass plays' turn count";}
+        return $reply;
     }
 }
 ?>
